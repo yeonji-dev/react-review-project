@@ -20,3 +20,7 @@
   - 페이지 이동 버튼
     - `import { Link } from 'react-router-dom';`
     - `<Link to={"경로"}>링크</Link>`와 같이 등록
+  - nested routes
+    - `<Route>`태그 안에 `<Route>`태그를 넣는다.
+    - 부모 Route 태그의 element가 공통으로 사용됨
+    - 자식 Route 태그의 element는 부모 컴포넌트의 Outlet 태그 위치에 삽입된다. 

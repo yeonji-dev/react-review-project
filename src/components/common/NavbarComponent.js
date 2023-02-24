@@ -1,16 +1,17 @@
 import {Container, Nav, Navbar} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link, useNavigate, Outlet} from "react-router-dom";
 
 const NavbarComponent = () => {
+    const navigate = useNavigate();
     return (
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Navbar.Brand onClick={() => { navigate("/") }}>깡총깡총</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link><Link to={"/"}>Home</Link></Nav.Link>
-                        <Nav.Link href="#features"><Link to={"/detail"}>Features</Link></Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <Nav.Link onClick={() => { navigate("/") }}>Home</Nav.Link>
+                        <Nav.Link onClick={() => { navigate("/detail") }}>Features</Nav.Link>
+                        <Nav.Link onClick={() => { navigate("/about") }}>About</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

@@ -1,6 +1,7 @@
 import ItemComponents from "./ItemComponents";
 import data from "../data.js";
 import {useState} from "react";
+import {Outlet} from "react-router-dom";
 
 const ListComponent = () => {
     const [item, setItem] = useState(data);
@@ -14,6 +15,7 @@ const ListComponent = () => {
                     ))}
                 </div>
             </div>
+            <Outlet></Outlet>
         </>
     );
 };

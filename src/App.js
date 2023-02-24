@@ -12,10 +12,11 @@ function App() {
         <div className="App">
             <NavbarComponent/>
             <Routes>
-                <Route path={"/"} element={<ListComponent/>}/>
-                <Route path={"/list"} element={<ListComponent/>}/>
-                <Route path={"/detail"} element={<div>상세페이지</div>}/>
-                <Route path={"/about"} element={<div>어바웃페이지</div>}/>
+                <Route path={"/"} element={<ListComponent/>}>
+                    {/*<Route path={"/list"} element={<ListComponent/>}/>*/}
+                    <Route path={"detail"} element={<div>상세페이지</div>}/>
+                    <Route path={"about"} element={<div>어바웃페이지</div>}/>
+                </Route>
                 <Route path="*" element={<PageException exceptionText={"Page Not Found"} />}/>
             </Routes>
         </div>
