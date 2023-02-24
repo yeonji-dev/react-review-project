@@ -24,3 +24,5 @@
     - `<Route>`태그 안에 `<Route>`태그를 넣는다.
     - 부모 Route 태그의 element가 공통으로 사용됨
     - 자식 Route 태그의 element는 부모 컴포넌트의 Outlet 태그 위치에 삽입된다. 
+  - useNavigate
+    - Link 태그와 같은 기능
