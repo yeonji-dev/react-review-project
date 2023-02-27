@@ -1,4 +1,5 @@
 import {useParams, useLocation} from "react-router-dom";
+import styled from "styled-components";
 
 const DetailComponent = () => {
     const location = useLocation(); //파라미터 받을때 useLocation 써야 함
@@ -15,11 +16,24 @@ const DetailComponent = () => {
                 <h4 className="pt-5">{detail.title}</h4>
                 <p>{detail.content}</p>
                 <p>{detail.price}원</p>
+                <YellowBtn bg="orange" className="btn">장바구니</YellowBtn>
+                <YellowBtn bg="blue" className="btn">저장</YellowBtn>
                 <button className="btn btn-danger">주문하기</button>
             </div>
           </div>
         </div>
     );
 };
+
+const Box = styled.div`
+  padding: 20px;
+  color: gray;
+`;
+
+const YellowBtn = styled.button`
+    background: ${props => props.bg};
+    color: ${props => props.bg == 'blue' ? 'white' : 'black'};
+    padding: 10px;
+`;
 
 export default DetailComponent;

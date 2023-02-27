@@ -26,3 +26,17 @@
     - 자식 Route 태그의 element는 부모 컴포넌트의 Outlet 태그 위치에 삽입된다. 
   - useNavigate
     - Link 태그와 같은 기능
+
+### styled-components
+- `npm install styled-components`
+- 사용하고 싶은 컴포넌트 맨 위에 import
+- 컴포넌트 만들때 스타일 미리 주입해서 만들수 있다.
+- html 페이지의 style 태그에 넣어줌
+- 장점
+  - 다른 페이지에 영향주지 않음
+  - 페이지 로딩시간 단축
+- 단점
+  - css 파일은 오염됨
+  - 일반 css 파일에 모듈화 기능 적용해서 해결
+    - 컴포넌트명.module.css로 작명
+    - 컴포넌트명.js 파일에서 import 해서 쓰면 그 컴포넌트에만 스타일 적용됨
