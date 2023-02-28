@@ -40,3 +40,19 @@
   - 일반 css 파일에 모듈화 기능 적용해서 해결
     - 컴포넌트명.module.css로 작명
     - 컴포넌트명.js 파일에서 import 해서 쓰면 그 컴포넌트에만 스타일 적용됨
+
+### useEffect
+- useEffect 안에 적은 코드는 html 렌더링 이후 동작
+- html 렌더링 이외 기능들(side effect) 넣으면 됨
+- 서버에서 데이터 가져오는 작업, 오래걸리는 반복연산, 타이머 달기 등 할때 많이 씀
+- 조금이라도 html 렌더링 빠르게 하기 위해서 씀
+```jsx
+useEffect(() => { 실행할코드 },[]); // 컴포넌트 mount시 한번만 실행
+useEffect(()=>{ 실행할코드 }, [state]); //state 변할때 실행
+useEffect(()=>{ 
+  //실행순서 2
+  return ()=>{
+    //실행순서 1 : socket 연결요청제거, ajax요청 중단 등... unmount시에도 1회 실행
+  }//clean up function 
+}, [count]);
+```
