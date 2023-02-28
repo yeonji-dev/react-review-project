@@ -14,6 +14,9 @@ const ListComponent = () => {
                 setItem([...item, ...axiosData]);
             }).catch((e) => {
                 console.log(e.getMessage);
+        });
+        return(() => {
+            setItem([]);
         })
     },[]);
     return (
