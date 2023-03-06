@@ -56,3 +56,7 @@ useEffect(()=>{
   }//clean up function 
 }, [count]);
 ```
+### Redux
+- `npm install @reduxjs/toolkit react-redux` : react, react-dom 버전이 18.1.x 이상이면 사용 가능
+- store.js 파일 생성
+- index.js에서 `<App/>`컴포넌트 `<Provider store={store}>`로 감싸기 -> App의 모든 자식컴포넌트들은 store.js 에 있는 state 마응대로 가져다 쓸 수 있다.
