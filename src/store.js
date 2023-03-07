@@ -18,15 +18,18 @@ const cartItem = createSlice({
     initialState: [],
     reducers: {
         addItem(state, action){
-            state.push(action.payload);
-        }
+            return [...state, action.payload];
+        },
     }
 })
 
 export default configureStore({
     reducer:{
-        user: user.reducer
+        user: user.reducer,
+        cartItem: cartItem.reducer,
     }
 })
 
 export let { changeUser, changeNum } = user.actions;//변수명에 export 하고싶은 함수명 나열
+
+export let { addItem } = cartItem.actions;

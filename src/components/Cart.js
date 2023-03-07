@@ -1,37 +1,49 @@
 import {Table} from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import {changeUser, changeNum} from "../store.js";
+import {useEffect, useState} from "react";
+import _ from "lodash";
 
 const Cart = () => {
-    const state = useSelector((state) => state);
-    const dispatch = useDispatch();
+    const cartList = useSelector((state) => state.cartItem);
+    const [list, setList] = useState([]);
+    const [cnt, setCnt] = useState({});
+
+    useEffect(() => {
+        setList(_.uniq(cartList));
+        const countBy = _.countBy(cartList, (i) => {
+            return i.id;
+        });
+        setCnt(countBy);
+    },[cartList]);
+
+    const getCount = (id) => {
+        return cnt[id];
+    }
 
     return (
+        list.length === 0
+            ? <h4>장바구니 비어있음</h4>
+            :
         <Table>
             <thead>
             <tr>
                 <th>#</th>
                 <th>상품명</th>
-                <th>
-                    <button onClick={() => {
-                            dispatch(changeNum(10));
-                        }}>숫자 바꾸기
-                    </button>
-                </th>
-                <th>
-                    <button onClick={() => {
-                        dispatch(changeUser('연지'));
-                    }}>이름 바꾸기</button>
-                </th>
+                <th>상품설명</th>
+                <th>상품가격</th>
+                <th>수량</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>안녕</td>
-                <td>{state.user.number}</td>
-                <td>{state.user.user}</td>
+            {list.map((item, index) => (
+            <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{item.title}</td>
+                <td>{item.content}</td>
+                <td>{item.price}</td>
+                <td>{getCount(item.id)}</td>
             </tr>
+            ))}
             </tbody>
         </Table>
     );
