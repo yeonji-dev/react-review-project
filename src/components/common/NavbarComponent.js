@@ -10,7 +10,7 @@ const NavbarComponent = () => {
                     <Navbar.Brand onClick={() => { navigate("/") }}>깡총깡총</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link onClick={() => { navigate("/") }}>Home</Nav.Link>
-                        <Nav.Link onClick={() => { navigate("/detail") }}>Features</Nav.Link>
+                        <Nav.Link onClick={() => { navigate("/features") }}>Features</Nav.Link>
                         <Nav.Link onClick={() => { navigate("/cart") }}>Cart</Nav.Link>
                     </Nav>
                 </Container>

@@ -1,7 +1,6 @@
 import ItemComponents from "./ItemComponents";
 import data from "../data.js";
 import {useEffect, useState} from "react";
-import {Outlet} from "react-router-dom";
 import axios from "axios";
 
 const ListComponent = () => {
@@ -29,7 +28,6 @@ const ListComponent = () => {
                     ))}
                 </div>
             </div>
-            <Outlet></Outlet>
         </>
     );
 };
