@@ -99,3 +99,11 @@ const Cart = () => {
   - ajax로 가져온 결과 state 공유 필요 없음
   - ajax 결과 캐싱 가능(5분)
 - RTK Query 라이브러리도 비슷한 기능 제공
+
+### memo
+- props가 변할때만 rerendering: props 매번 비교. props가 복잡하면 별로일지도 모름
+- memo import 해서 rerendering 할 필요 없는 컴포넌트 함수를 감싼다.
+
+### useMemo
+- useEffect랑 비슷. 차이점은 실행시점의 차이
+- 함수 return 값을 memoization
