@@ -88,3 +88,14 @@ const Cart = () => {
 };
 
 ```
+
+### react-query
+- 실시간 데이터를 계속 가져와야 하는 사이트에서 사용하면 유용하다.
+- `npm install @tanstack/react-query`
+- 장점
+  - ajax 성공/실패/로딩중 파악 쉬움
+  - 주기적으로 자동으로 ajax 재요청 : But 웹소켓, server-sent event가 더 가벼움.
+  - 실패시 재시도 자동으로 해줌
+  - ajax로 가져온 결과 state 공유 필요 없음
+  - ajax 결과 캐싱 가능(5분)
+- RTK Query 라이브러리도 비슷한 기능 제공
